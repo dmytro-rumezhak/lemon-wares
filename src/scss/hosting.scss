@@ -1,0 +1,129 @@
+.hosting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include adaptiveValue('margin-bottom', 104, 60, 0, 1190, 320);
+
+    &__text {
+        width: 595px;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__desc {
+        font-size: 18px;
+        line-height: 32px;
+        line-height: math.div(32, 18);
+
+        color: #18191f;
+
+        @include adaptiveValue('font-size', 18, 14, 0, 1190, 320);
+    }
+
+    &__logo-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: rem(36);
+        width: rem(590);
+
+        @include adaptiveValue('gap', 36, 20, 0, 1190, 320);
+
+        @media (max-width: $mobile) {
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (max-width: 370px) {
+            flex-direction: column;
+        }
+    }
+
+    &__logo-item {
+        @media (min-width: 940px) and (max-width: 1142px) {
+            width: 40%;
+        }
+        @media (min-width: 451px) and (max-width: $mobile) {
+            width: 30%;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.advantage {
+    // .advantage__list
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+
+        @include adaptiveValue('gap', 60, 30, 0, 1190, 320);
+
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
+    }
+
+    // .advantage__item
+
+    &__item {
+        text-align: center;
+        width: 259px;
+
+        @media (max-width: $mobile) {
+            width: 250px;
+        }
+    }
+
+    // .advantage__icon
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+        width: rem(100);
+        height: rem(100);
+        background-color: rgba(176, 0, 0, 0.15);
+        border-radius: 50%;
+        margin-bottom: rem(16);
+    }
+
+    // .advantage__svg
+
+    &__svg {
+    }
+
+    &__title {
+        font-family: 'Poppins';
+        margin-bottom: rem(4);
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: math.div(30, 20);
+
+        @include adaptiveValue('font-size', 20, 18, 0, 1190, 320);
+
+        color: #000000;
+    }
+
+    // .advantage__desc
+
+    &__desc {
+        font-family: 'Poppins';
+        font-weight: 300;
+        font-size: 12px;
+        line-height: math.div(18, 12);
+
+        color: #000000;
+    }
+}

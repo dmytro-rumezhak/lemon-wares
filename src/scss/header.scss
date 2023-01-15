@@ -1,0 +1,278 @@
+//====================================================================================================
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    // background-color: rgba(255, 255, 255, 0.75);
+    &--mb {
+        margin-bottom: 40px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 142px;
+
+        @media (max-width: $mobile) {
+            min-height: 100px;
+        }
+        @media (max-width: $mobileSmall) {
+            min-height: 65px;
+        }
+    }
+
+    &__logo {
+        @include adaptiveValue('margin-right', 165, 10, 0, 1190, 767);
+        z-index: 102;
+    }
+
+    &__burger {
+        z-index: 101;
+    }
+}
+
+.menu-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media (max-width: $mobile) {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+
+        background-color: #efefef;
+        z-index: 100;
+        display: inline-block;
+        text-align: center;
+        padding: rem(80) rem(15);
+        transition: left 0.3s ease 0s;
+
+        .menu-open & {
+            left: 0;
+        }
+    }
+}
+
+.logo__img {
+    @include adaptiveValue('height', 60, 35);
+    position: relative;
+    z-index: 5;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    &__logo {
+        margin-right: rem(20);
+        @media (max-width: $mobile) {
+            display: inline-block;
+            margin-right: 0;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            justify-content: start;
+        }
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            @include adaptiveValue('margin-right', 14, 0);
+        }
+        @media (max-width: $mobile) {
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+    &__link {
+        display: block;
+        font-family: 'Poppins';
+        font-weight: 600;
+        text-align: center;
+        font-size: rem(15);
+        line-height: math.div(23, 15);
+        @include adaptiveValue('padding', 10, 2);
+        transition: color 0.3s ease 0s;
+
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accentColor;
+            }
+        }
+
+        &--active::after {
+            content: '';
+            position: absolute;
+            display: block;
+            margin-top: rem(4);
+            left: 17.5%;
+            width: 65%;
+            height: rem(2);
+            border-radius: rem(1);
+            background-color: $accentColor;
+        }
+    }
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    @media (max-width: $mobile) {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child):after {
+            content: '';
+            height: rem(19);
+            width: rem(1);
+            background-color: #dad8d8;
+            @include adaptiveValue('margin-right', 30, 1);
+            @include adaptiveValue('margin-left', 30, 1);
+
+            @media (max-width: $mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__link {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: rem(15);
+        line-height: math.div(23, 15);
+        display: inline-block;
+        @include adaptiveValue('padding', 10, 2);
+
+        transition: color 0.3s ease 0s;
+
+        @media (max-width: $mobile) {
+            font-size: rem(20);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accentColor;
+            }
+        }
+    }
+
+    &__link-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: rem(16);
+        line-height: math.div(23, 16);
+        transition: color 0.3s ease 0s;
+
+        @media (max-width: $mobile) {
+            font-size: rem(21);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accentColor;
+            }
+        }
+        &::before {
+            content: url(../img/icon/phone-icon.svg);
+            width: rem(20);
+            height: rem(20);
+            margin-right: rem(6);
+        }
+    }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+    display: block;
+
+    @media (max-width: $mobile) {
+        position: absolute;
+        top: 41px;
+        right: 15px;
+        width: rem(30);
+        height: rem(18);
+        z-index: 5;
+        @media (any-hover: none) {
+            cursor: default;
+        }
+        span,
+        &::before,
+        &::after {
+            content: '';
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: #000;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(1));
+        }
+        .menu-open & {
+            span {
+                width: 0;
+            }
+            &::before,
+            &::after {
+            }
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(1));
+                transform: rotate(45deg);
+            }
+        }
+    }
+    @media (max-width: $mobileSmall) {
+        top: 24px;
+    }
+}
