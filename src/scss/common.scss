@@ -26,8 +26,13 @@
     }
 
     &--mb {
-        margin-bottom: rem(100);
+        margin-bottom: rem(134);
 
-        @include adaptiveValue('margin-bottom', 100, 60, 0, 1190, 320);
+        @include adaptiveValue('margin-bottom', 134, 80, 0, 1190, 320);
+    }
+
+    &--subscr {
+        margin-bottom: rem(160);
+        @include adaptiveValue('margin-bottom', 160, 100, 0, 1190, 320);
     }
 }

@@ -1,0 +1,345 @@
+.subscr {
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 50px;
+        line-height: math.div(60, 50);
+
+        @include adaptiveValue('font-size', 50, 22, 0, 1190, 320);
+
+        text-align: center;
+
+        max-width: rem(650);
+        margin: 0 auto;
+
+        @include adaptiveValue('max-width', 650, 300, 0, 1190, 320);
+
+        &--mb {
+            margin-bottom: rem(38);
+            @include adaptiveValue('margin-bottom', 38, 26, 0, 1190, 320);
+        }
+    }
+
+    // .subscr__subtitle
+
+    &__subtitle {
+        font-family: 'Poppins';
+        font-size: 25px;
+        line-height: math.div(25, 25);
+
+        @include adaptiveValue('font-size', 25, 16, 0, 1190, 320);
+
+        text-align: center;
+
+        &--mb {
+            margin-bottom: rem(56);
+            @include adaptiveValue('margin-bottom', 56, 38, 0, 1190, 320);
+        }
+    }
+}
+.switch {
+    // .switch__cont
+
+    &__cont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--mb {
+            margin-bottom: rem(70);
+            @include adaptiveValue('margin-bottom', 70, 40, 0, 1190, 320);
+        }
+    }
+
+    // .switch__desc
+
+    &__desc {
+        font-family: 'Poppins';
+        font-size: 25px;
+        line-height: math.div(25, 25);
+
+        @include adaptiveValue('font-size', 25, 16, 0, 1190, 320);
+
+        &--after {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:after {
+                content: '20%  discount';
+                left: calc(100% + 17px);
+                position: absolute;
+                padding: 7px 8px;
+                width: 87px;
+                height: 24px;
+                background-color: #ffe87a;
+                border-radius: 8px;
+
+                font-family: 'Poppins';
+                font-weight: 500;
+                font-size: 10px;
+                line-height: math.div(9, 10);
+                text-align: center;
+
+                @media (max-width: $mobileSmall) {
+                    left: 0;
+                    top: calc(100% + 4px);
+                }
+            }
+        }
+
+        &--mr {
+            margin-right: rem(31);
+        }
+    }
+
+    // .switch__btn
+
+    &__btn {
+        position: relative;
+        display: inline-block;
+        width: 93px;
+        height: 50px;
+        margin-right: rem(26);
+
+        @include adaptiveValue('width', 93, 62, 0, 1190, 320);
+        @include adaptiveValue('height', 50, 33, 0, 1190, 320);
+
+        @include adaptiveValue('margin-right', 26, 18, 0, 1190, 320);
+
+        & input {
+            display: none;
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $accentColor;
+        transition: background-color 0.3s ease 0s;
+
+        input:checked + & {
+            background-color: #c61414;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            height: 30px;
+            width: 30px;
+            left: 9px;
+            bottom: 10px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+
+            input:checked + & {
+                left: calc(50% + 6px);
+            }
+
+            @include adaptiveValue('width', 30, 20, 0, 1190, 320);
+            @include adaptiveValue('height', 30, 20, 0, 1190, 320);
+            @include adaptiveValue('left', 9, 6, 0, 1190, 320);
+            @include adaptiveValue('bottom', 10, 7, 0, 1190, 320);
+        }
+    }
+    &__round {
+        border-radius: 73px;
+    }
+}
+
+.subscr-tabs {
+    // .subscr-tabs__nav
+
+    &__nav {
+        position: relative;
+        margin: 0 auto;
+        display: flex;
+        max-width: 856px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 47px;
+            width: 100%;
+            height: 4px;
+            background-color: #c4c4c4;
+            @include adaptiveValue('top', 47, 32, 0, 1190, 320);
+        }
+
+        &--mb {
+            margin-bottom: 96px;
+
+            @include adaptiveValue('margin-bottom', 96, 60, 0, 1190, 320);
+        }
+    }
+
+    // .subscr-tabs__name
+
+    &__name {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 30px;
+        line-height: math.div(40, 30);
+
+        @include adaptiveValue('font-size', 30, 20, 0, 1190, 320);
+
+        text-align: center;
+
+        &._subscr-tab--active {
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 47px;
+                width: 100%;
+                height: 4px;
+                background-color: $accentColor;
+                z-index: 100;
+                @include adaptiveValue('top', 47, 32, 0, 1190, 320);
+            }
+        }
+    }
+
+    // .subscr-tabs__list
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 100px;
+
+        @include adaptiveValue('gap', 100, 40, 0, 1190, 320);
+    }
+
+    // .subscr-tabs__item
+
+    &__item {
+        max-width: 299px;
+        padding: 35px 29px 48px 35px;
+
+        border: 1.5px solid #c4c4c4;
+        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+
+    // .subscr-tabs__title
+
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 28px;
+        line-height: math.div(25, 28);
+
+        @include adaptiveValue('font-size', 28, 18, 0, 1190, 320);
+
+        margin-bottom: 11px;
+    }
+
+    // .subscr-tabs__desc
+
+    &__desc {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: math.div(18, 12);
+
+        @include adaptiveValue('font-size', 12, 10, 0, 1190, 320);
+
+        margin-bottom: 28px;
+
+        @include adaptiveValue('margin-bottom', 28, 20, 0, 1190, 320);
+    }
+
+    // .subscr-tabs__price
+
+    &__price {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 42px;
+        line-height: math.div(32, 42);
+
+        @include adaptiveValue('font-size', 42, 28, 0, 1190, 320);
+
+        margin-bottom: 11px;
+    }
+
+    // .subscr-tabs__price-desc
+
+    &__price-desc {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: math.div(14, 14);
+
+        @include adaptiveValue('font-size', 14, 12, 0, 1190, 320);
+
+        margin-bottom: 35px;
+        @include adaptiveValue('margin-bottom', 35, 24, 0, 1190, 320);
+    }
+
+    // .subscr-tabs__list-advant
+
+    &__btn {
+        width: 235px;
+        height: 50px;
+
+        background: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 12px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: math.div(32, 14);
+
+        @include adaptiveValue('font-size', 14, 12, 0, 1190, 320);
+
+        margin-bottom: 35px;
+        transition: all 0.3s ease 0s;
+
+        @include adaptiveValue('margin-bottom', 35, 24, 0, 1190, 320);
+
+        &:hover {
+            background-color: $accentColor;
+            border-color: $accentColor;
+            color: #fff;
+        }
+    }
+
+    &__list-advant {
+        padding-left: 24px;
+    }
+
+    // .subscr-tabs__item-advant
+
+    &__item-advant {
+        list-style-image: url('../img/icon/chekmark.svg');
+
+        padding-left: 28px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: math.div(24, 16);
+
+        @include adaptiveValue('font-size', 16, 12, 0, 1190, 320);
+
+        @include adaptiveValue('padding-left', 16, 12, 0, 1190, 320);
+
+        color: #808080;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
