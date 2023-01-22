@@ -25,6 +25,8 @@ import * as flsFunctions from "./files/functions.js";
 /* Перевірка підтримки webp, додавання класу webp або no-webp для HTML */
 /* (i) необхідно для коректного відображення webp із css */
 flsFunctions.isWebp();
+
+
 /* Додавання класу touch для HTML якщо браузер мобільний */
 // flsFunctions.addTouchClass();
 /* Додавання loaded для HTML після повного завантаження сторінки */
@@ -46,7 +48,7 @@ flsFunctions.menuInit();
 Документація: https://template.fls.guru/template-docs/modul-taby.html
 Сніппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показати ще"
@@ -221,3 +223,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
+
+
+
+
