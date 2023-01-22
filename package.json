@@ -7,7 +7,6 @@
 	"license": "",
 	"type": "module",
 	"homepage": "https://dmytro-rumezhak.github.io/lemon-wares",
-
 	"scripts": {
 		"start": "npm i --legacy-peer-deps",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
