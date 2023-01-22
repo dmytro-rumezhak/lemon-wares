@@ -6,17 +6,19 @@
 	"private": true,
 	"license": "",
 	"type": "module",
+	"homepage": "https://dmytro-rumezhak.github.io/lemon-wares",
+
 	"scripts": {
 		"start": "npm i --legacy-peer-deps",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
 		"build": "gulp build --build",
 		"sprite": "gulp sprite",
 		"fonts": "gulp fonts --rewrite",
-		"deploy": "gulp deployFTP --build",
-		"zip": "gulp deployZIP --build",
 		"devbuild": "gulp build --build --nowebp",
 		"tmp": "gulp -f gulpfile.tmp.js",
-		"bem": "fls-bemtree-from-html"
+		"bem": "fls-bemtree-from-html",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "latest",
@@ -71,6 +73,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"gh-pages": "^5.0.0",
 		"gulp-cheerio": "^1.0.0",
 		"simplebar": "latest"
 	}
