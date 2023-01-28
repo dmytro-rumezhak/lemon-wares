@@ -45,6 +45,22 @@
     &--serve {
         margin-bottom: rem(8);
     }
+
+    &--contact {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: rem(64);
+        line-height: math.div(88, 64);
+        color: #2e2e2e;
+    
+        @include adaptiveValue('font-size', 64, 24, 0, 1190, 320);
+
+        margin-bottom: rem(40);
+
+        @include adaptiveValue('margin-bottom', 40, 20, 0, 1190, 320);
+    
+
+    }
 }
 
 .subtittle {
@@ -93,5 +109,10 @@
     &--subscr {
         margin-bottom: rem(160);
         @include adaptiveValue('margin-bottom', 160, 100, 0, 1190, 320);
+    }
+
+    &--contact {
+        margin-bottom: rem(110);
+        @include adaptiveValue('margin-bottom', 110, 50, 0, 1190, 320);
     }
 }
