@@ -14,15 +14,6 @@
         }
     }
 
-    &__desc {
-        font-size: 18px;
-        line-height: 32px;
-        line-height: math.div(32, 18);
-
-        color: #18191f;
-
-        @include adaptiveValue('font-size', 18, 14, 0, 1190, 320);
-    }
 
     &__logo-list {
         display: flex;
