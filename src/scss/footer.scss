@@ -1,3 +1,151 @@
 //====================================================================================================
+.footer {
+    background-color: $accentColor;
+
+    // .footer__container
+
+    &__cont {
+        padding-top: rem(64);
+        padding-bottom: rem(80);
+    }
+
+    &__content {
+        display: flex;
+
+        margin-bottom: rem(96);
+    }
+
+    // .footer__logo-container
+
+    &__logo-container {
+        max-width: rem(296);
+        margin-right: rem(112);
+        @include adaptiveValue('margin-right', 112, 70, 0, 1440, 1024);
+
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        display: block;
+        margin-bottom: rem(16);
+    }
+
+    // .footer__desc
+
+    &__desc {
+        font-size: 16px;
+        line-height: math.div(32, 16);
+
+        @include adaptiveValue('font-size', 16, 12, 0, 1190, 320);
+
+        color: #e6e6e6;
+    }
+
+    // .footer__nav
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: rem(120);
+        margin-top: rem(16);
+
+        @include adaptiveValue('column-gap', 120, 50, 0, 1440, 1024);
+    }
+
+    // .footer__nav-list
+
+    &__nav-list {
+        position: relative;
+    }
+
+    &__item-dropdown {
+        @media (max-width: $mobile) {
+            position: absolute;
+            display: none;
+
+            .footer__nav-item--first:hover + & {
+                display: block;
+            }
+        }
+    }
+
+    // ul li:hover > ul {
+    //     display:inherit;
+    // }
+
+    // .footer__nav-item
+
+    &__nav-item {
+        font-size: 16px;
+        line-height: math.div(32, 16);
+
+        @include adaptiveValue('font-size', 16, 12, 0, 1190, 320);
+
+        color: #e6e6e6;
+        &:not(:last-child) {
+            // margin-bottom: rem(24);
+            @include adaptiveValue('margin-bottom', 24, 12, 0, 1190, 320);
+        }
+
+        &--first {
+            font-weight: 700;
+            line-height: math.div(24, 16);
+
+            font-feature-settings: 'pnum' on, 'lnum' on;
+        }
+    }
+
+    // .footer__link
+
+    &__link {
+    }
+
+    // .footer__item-dropdown
+
+    // .footer__copyright
+
+    &__copyright {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: math.div(32, 16);
+
+        @include adaptiveValue('font-size', 16, 12, 0, 1190, 320);
+
+        /* Text/Disable */
+
+        color: #fff;
+    }
+
+    &__svg {
+        width: 24px;
+        height: 24px;
+        margin: 0 5px;
+    }
+}
 
 //====================================================================================================
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+/* Change this in order to change the Dropdown symbol */
+li > a:after {
+    content: ' +';
+}
+li > a:only-child:after {
+    content: '';
+}

@@ -74,9 +74,11 @@
 }
 
 .container-sm {
-    max-width: rem(1220);
+    width: rem(1220);
     margin: 0 auto;
     padding: 0 15px;
+
+
 
     &--df {
         display: flex;
